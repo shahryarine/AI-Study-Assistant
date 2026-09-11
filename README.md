@@ -13,6 +13,16 @@ An AI-powered study assistant designed to help students learn more effectively.
 - RAG-based document retrieval
 
 
+## Setup
+
+- Python: 3.11.x (see .python-version)
+- Create venv: `python -m venv venv`
+- Activate:
+  - Linux/Mac: `source venv/bin/activate`
+  - Windows: `venv\Scripts\activate`
+- Install deps: `pip install -r requirements.txt`
+- Verify: `python --version` should print 3.11.x
+
 ## Team Members
 Arian
 Fatemeh
