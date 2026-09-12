@@ -55,8 +55,8 @@ class VectorStore:
             for i in range(len(documents))
         ]
 
-        texts = [document.page_content for document in documents]
-        metadatas = [document.metadata for document in documents]
+        texts = [document["content"] for document in documents]
+        metadatas = [document["metadata"] for document in documents]
 
         self.collection.add(
             ids=ids,
