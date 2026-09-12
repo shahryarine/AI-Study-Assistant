@@ -1,5 +1,3 @@
-# AI-Study-Assistant
-AI-powered study assistant for students using RAG and LLMs.
 # AI Study Assistant
 
 An AI-powered study assistant designed to help students learn more effectively.
@@ -12,6 +10,26 @@ An AI-powered study assistant designed to help students learn more effectively.
 - Generate practice questions
 - RAG-based document retrieval
 
+## Project Structure
+
+- app/        → Streamlit application
+- rag/        → RAG core
+- ingestion/ → PDF processing and text preprocessing
+- cli/        → Command-line interface
+- data/       → Local application data and ChromaDB storage
+
+### Root Files
+
+- .env.example      → Template for environment variables
+- .gitignore        → Git ignore rules
+- .python-version   → Pinned Python version (3.11)
+- requirements.txt  → Project dependencies
+- README.md         → Project documentation
+
+## Requirements
+
+- Python 3.11
+- venv
 
 ## Setup
 
