@@ -4,31 +4,21 @@ from langchain_text_splitters import RecursiveCharacterTextSplitter
 
 class TextChunker:
     """
-    Splits cleaned texts into smaller overlapping chunks for vector embedding.
-    Utilizes a recursive character splitting strategy prioritizing natural language boundaries.
+    Splits text into chunks using Regex separators to intelligently handle
+    abbreviations and sentence boundaries.
     """
     
     DEFAULT_SEPARATORS = [
-        "\n\n",   # Paragraph boundary
-        "\n",     # Line boundary
-        "؟ ",     # Persian/Arabic question mark
-        "? ",     # English question mark
-        "! ",     # Exclamation mark
-        "؛ ",     # Persian/Arabic semicolon
-        "; ",     # English semicolon
-        "، ",     # Persian/Arabic comma
-        ", ",     # English comma
-        ". ",     # Sentence boundary
-        " ",      # Word boundary
-        ""        # Character level fallback
+        r"\n\n", 
+        r"\n",
+        r"(?<=[.?!؟؛])\s+",  # Matches spaces after punctuation marks
+        r"\s+",              # Fallback to general whitespace
+        r""
     ]
 
     def __init__(self, chunk_size: int = 700, chunk_overlap: int = 100):
-        """
-        Initialize the TextChunker with specific size and overlap constraints.
-        """
         if chunk_size <= 0 or chunk_overlap < 0 or chunk_overlap >= chunk_size:
-            raise ValueError("Invalid chunk configuration: overlap must be non-negative and strictly less than chunk_size.")
+            raise ValueError("Invalid chunk configuration.")
 
         self.chunk_size = chunk_size
         self.chunk_overlap = chunk_overlap
@@ -37,21 +27,20 @@ class TextChunker:
             chunk_size=self.chunk_size,
             chunk_overlap=self.chunk_overlap,
             separators=self.DEFAULT_SEPARATORS,
-            keep_separator=True,
+            is_separator_regex=True,  # Activated Regex parsing for smarter splits
+            keep_separator=False,     # Clean up separators from the final chunk text
             length_function=len,
         )
 
-    def _generate_chunk_id(self, text: str, page_index: int, chunk_index: int) -> str:
+    def _generate_chunk_id(self, text: str, source_identifier: str) -> str:
         """
-        Generate a deterministic, unique hash for a chunk to prevent duplicate vector DB insertions.
+        Generates a robust, order-independent hash based purely on the chunk's
+        content and source origin.
         """
-        unique_string = f"{text}_{page_index}_{chunk_index}"
+        unique_string = f"{source_identifier}_{text}"
         return hashlib.sha256(unique_string.encode('utf-8')).hexdigest()[:16]
 
     def split_text(self, text: str) -> List[str]:
-        """
-        Split a single text string into multiple chunk strings.
-        """
         if not text or not text.strip():
             return []
         
@@ -59,22 +48,18 @@ class TextChunker:
         return [chunk.strip() for chunk in chunks if chunk.strip()]
 
     def chunk_pages(self, pages: List[Dict[str, Any]]) -> Iterator[Dict[str, Any]]:
-        """
-        Generate chunk dictionaries from a list of page data dictionaries.
-        Yields chunks lazily to optimize memory usage for large documents.
-        """
-        for page_index, page_data in enumerate(pages):
+        for page_data in pages:
             content = page_data.get("content", "")
             if not content or not content.strip():
                 continue
 
-            # Ensure we do not mutate the original dictionary reference
             metadata = dict(page_data.get("metadata", {}))
+            source_id = metadata.get("filename", "unknown_source")
             page_chunks = self.split_text(content)
 
             for chunk_index, chunk_text in enumerate(page_chunks):
                 yield {
-                    "chunk_id": self._generate_chunk_id(chunk_text, page_index, chunk_index),
+                    "chunk_id": self._generate_chunk_id(chunk_text, source_id),
                     "content": chunk_text,
                     "metadata": {
                         **metadata,
@@ -82,21 +67,3 @@ class TextChunker:
                         "chunk_index": chunk_index
                     }
                 }
-
-def create_chunks(pages: List[Dict[str, Any]], chunk_size: int = 700, chunk_overlap: int = 100) -> List[Dict[str, Any]]:
-    """
-    Helper function to initialize the chunker and process pages eagerly into a list.
-    """
-    chunker = TextChunker(chunk_size=chunk_size, chunk_overlap=chunk_overlap)
-    return list(chunker.chunk_pages(pages))
-
-if __name__ == "__main__":
-    # Test execution
-    dummy_pages = [{
-        "content": "Machine learning is fascinating. It allows systems to learn from data.\n\nHowever, data preprocessing is essential.",
-        "metadata": {"filename": "test_doc.pdf", "page": 1, "total_pages": 1}
-    }]
-    
-    chunks = create_chunks(dummy_pages, chunk_size=50, chunk_overlap=10)
-    for c in chunks:
-        print(f"ID: {c['chunk_id']} | Size: {c['metadata']['chunk_size']} | Content: {c['content']}")
