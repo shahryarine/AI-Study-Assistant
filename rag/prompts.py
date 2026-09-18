@@ -1,16 +1,12 @@
 import json
 from json import JSONDecodeError
-from typing import Any
-
+from typing import Any, Dict, Optional
 
 class PromptBuilder:
     """
     Builds prompts for the study assistant LLM.
-
-    Supports:
-    - Grounded question answering
-    - Multiple-choice exam generation
-    - Structured JSON response parsing
+    Supports grounded question answering, multiple-choice exam generation, 
+    and structured JSON response parsing.
     """
 
     SYSTEM_PROMPT = """
@@ -49,33 +45,28 @@ Rules:
    - "source_page"
 """.strip()
 
-    def build(
-        self,
-        question: str,
-        context: str,
-    ) -> dict[str, str]:
+    def __init__(self, system_prompt: Optional[str] = None):
         """
-        Build a system prompt and user prompt for question answering.
+        Initialize with a default system prompt or override it for custom behaviors.
         """
+        self.system_prompt = system_prompt or self.SYSTEM_PROMPT
+        """
+        self.system_prompt = system_prompt or self.DEFAULT_SYSTEM_PROMPT
 
+    def build(self, question: str, context: str) -> Dict[str, str]:
+        """
+        Generate the final system and user prompt dictionary for API consumption.
+        """
         if not question or not question.strip():
             raise ValueError("Question cannot be empty.")
 
         if not context or not context.strip():
             raise ValueError("Context cannot be empty.")
 
-        user_prompt = f"""
-Context:
-
-{context}
-
-Question:
-
-{question.strip()}
-""".strip()
+        user_prompt = f"Context:\n\n{context}\n\nQuestion:\n\n{question.strip()}"
 
         return {
-            "system": self.SYSTEM_PROMPT,
+            "system": self.system_prompt,
             "user": user_prompt,
         }
 
