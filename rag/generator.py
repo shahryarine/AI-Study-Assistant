@@ -16,24 +16,22 @@ class OpenRouterClient:
     DEFAULT_BASE_URL = "https://openrouter.ai/api/v1/chat/completions"
 
     def __init__(
-    self,
-    model: str | None = None,
-    api_key: str | None = None,
+        self,
+        model: str | None = None,
+        api_key: str | None = None,
         base_url: str = DEFAULT_BASE_URL,
         timeout: int = 45,
     ):
         self.model = model or os.getenv(
-    "OPENROUTER_MODEL",
-    "openrouter/free",
-    )
+            "OPENROUTER_MODEL",
+            "openrouter/free",
+        )
         self.api_key = api_key or os.getenv("OPENROUTER_API_KEY")
         self.base_url = base_url
         self.timeout = timeout
 
         if not self.api_key:
-            raise ValueError(
-                "OPENROUTER_API_KEY is not set."
-            )
+            raise ValueError("OPENROUTER_API_KEY is not set.")
 
         if not self.model:
             raise ValueError("Model name cannot be empty.")
@@ -45,9 +43,12 @@ class OpenRouterClient:
         self,
         system_prompt: str,
         user_prompt: str,
+        is_json_mode: bool = False,
     ) -> str:
         """
         Send a prompt to OpenRouter and return the generated text.
+
+        When is_json_mode is True, request a JSON object response.
         """
 
         if not system_prompt or not system_prompt.strip():
@@ -75,6 +76,11 @@ class OpenRouterClient:
             ],
             "temperature": 0.0,
         }
+
+        if is_json_mode:
+            payload["response_format"] = {
+                "type": "json_object",
+            }
 
         try:
             response = requests.post(
