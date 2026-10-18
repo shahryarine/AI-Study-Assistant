@@ -1,0 +1,367 @@
+[
+  {
+    "question": "واژه «اخلاق» در لغت به چه معناست و با چه واژه‌ای هم‌ریشه شمرده شده است؟",
+    "ground_truth": "واژه «اخلاق» جمع «خُلق» است و در لغت به معنای سرشت و سجیه می‌باشد؛ این سرشت می‌تواند نیکو و پسندیده (مانند راستگویی و پاکدامنی) یا زشت و ناپسند (مانند دروغ‌گویی و آلوده‌دامنی) باشد. این واژه با «خَلق» (آفرینش و ظاهر) هم‌ریشه شمرده شده است.",
+    "context": "واژه‌ی «اخلاق» جمع «خُلق» به معنای سرشت و سجیه است و می‌تواند شامل سجایای نیکو (راستگویی، پاکدامنی) یا ناپسند (دروغ‌گویی، آلوده‌دامنی) باشد. این واژه با «خَلق» (آفرینش و ظاهر) هم‌ریشه شمرده شده است."
+  },
+  {
+    "question": "پژوهش‌های اخلاقی به چه سه گونه تقسیم می‌شوند و روش هر کدام چیست؟",
+    "ground_truth": "پژوهش‌های اخلاقی سه گونه‌اند: اخلاق توصیفی که اخلاقیات افراد و جوامع را گزارش می‌کند و روش آن تاریخی و نقلی است؛ اخلاق هنجاری (دستوری) که افعال اختیاری انسان را از حیث خوبی و بدی و بایستگی بررسی می‌کند و روش آن استدلالی و عقلی است؛ و فرااخلاق که به بررسی تحلیلی و فلسفی مفاهیم و احکام اخلاقی می‌پردازد.",
+    "context": "پژوهش‌های اخلاقی به سه گونه تقسیم می‌شوند: توصیفی، هنجاری و تحلیلی (فرااخلاق). اخلاق توصیفی به توصیف و گزارش اخلاقیات افراد، گروه‌ها و جوامع می‌پردازد. روش آن تاریخی و نقلی است. اخلاق هنجاری (دستوری) افعال اختیاری انسان و صفات حاصل از آن‌ها را از حیث خوبی یا بدی و بایستگی یا نبایستگی بررسی می‌کند. روش آن استدلالی و عقلی است."
+  },
+  {
+    "question": "فیلسوف فرااخلاق درباره‌ی حکمی مانند «سقط جنین بد است» چه کاری انجام می‌دهد؟",
+    "ground_truth": "فیلسوف فرااخلاق درباره درستی یا نادرستی چنین حکمی داوری نمی‌کند؛ او فقط معنای «خوب» و «بد» و تحلیل گزاره‌ها را بررسی می‌کند. مفاهیم و احکام اخلاقی از سه جهت معناشناختی، معرفت‌شناختی و وجودشناختی بحث می‌شوند.",
+    "context": "فرااخلاق به بررسی تحلیلی و فلسفی مفاهیم و احکام اخلاقی می‌پردازد. فیلسوف فرااخلاق درباره درستی یا نادرستی حکمی مانند «سقط جنین بد است» داوری نمی‌کند و فقط معنای «خوب» و «بد» و تحلیل گزاره‌ها را بررسی می‌کند. مفاهیم و احکام اخلاقی از سه جهت بحث می‌شوند: معناشناختی، معرفت‌شناختی و وجودشناختی."
+  },
+  {
+    "question": "مشکل اصلی بسیاری از مردم که با فضایل و رذایل اخلاقی آشنایند چیست؟",
+    "ground_truth": "دو مشکل دارند: نخست اینکه راه انجام وظایف اخلاقی و چگونگی اعمال احکام را نمی‌دانند (مثلاً گرفتاران غیبت یا حسد راه نجات را نمی‌شناسند)؛ دوم اینکه در موارد تزاحم و تعارض وظایف اخلاقی نمی‌توانند تصمیم درست بگیرند (مثلاً تعارض احترام به والدین با پرهیز از شنیدن غیبت و امر به معروف).",
+    "context": "مشکل نخست: راه انجام وظایف اخلاقی و چگونگی اعمال احکام را نمی‌دانند. مثلاً گرفتاران غیبت یا حسد می‌دانند چه بلایی دارند ولی راه نجات را نمی‌شناسند. مشکل دوم: در موارد تزاحم و تعارض وظایف اخلاقی نمی‌توانند تصمیم درست بگیرند."
+  },
+  {
+    "question": "چهار لغزشگاه اخلاقی اصلی در دست‌یابی به علم حقیقی کدامند؟",
+    "ground_truth": "چهار لغزشگاه عبارت‌اند از: پیروی از حدس و گمان، تقلید کورکورانه، شتاب‌زدگی و تمایلات نفسانی (حب و بغض، تعصب، طمع، عجب و خودبزرگ‌بینی).",
+    "context": "خطای ذهن گاه از چینش نادرست مقدمات است و گاه از آلودگی‌های اخلاقی. چهار لغزشگاه اخلاقی اصلی معرفی شده است. پیروی از حدس و گمان. تقلید کورکورانه. شتاب‌زدگی. تمایلات نفسانی."
+  },
+  {
+    "question": "مراتب مختلف نیت در انجام کارها طبق کتاب چیست و منظور از نیت چه نیست؟",
+    "ground_truth": "مراتب نیت سه گونه است: بهره‌مندی از نعمت‌های الهی و بهشت، رهایی از عذاب و ترس از جهنم، و در بالاترین مرتبه فقط رضایت خدا. منظور از نیت گفتن لفظ یا حضور قلب نیست، بلکه انگیزه‌ی اصلی انجام کار است؛ یعنی تنها عامل باید انگیزه‌ی الهی باشد نه ریا و خوشایند دیگران.",
+    "context": "منظور از نیت، لفظ گفتن یا حضور قلب نیست، بلکه انگیزه‌ی اصلی انجام کار است: اینکه تنها عامل، انگیزه‌ی الهی باشد نه ریا و خوشایند دیگران. مراتب نیت متفاوت است: بهره‌مندی از نعمت‌های الهی و بهشت، رهایی از عذاب و ترس از جهنم، و در بالاترین مرتبه، فقط رضایت خدا."
+  },
+  {
+    "question": "شرایط امر به معروف و نهی از منکر کدام‌اند؟",
+    "ground_truth": "سه شرط دارد: شناخت معروف و منکر؛ احتمال تأثیر (برای مراتب زبانی و عملی، نه قلبی)؛ و اصرار مرتکب بر ادامه‌ی منکر یا ترک معروف، به‌طوری که اگر خود متوجه خطا شده و در صدد اصلاح است جایی برای امر و نهی نیست.",
+    "context": "شرط اول: شناخت معروف و منکر. شرط دوم: احتمال تأثیر (برای مراتب زبانی و عملی، نه قلبی). شرط سوم: اصرار مرتکب بر ادامه‌ی منکر یا ترک معروف؛ اگر خود متوجه خطا شده و در صدد اصلاح است جایی برای امر و نهی نیست."
+  },
+  {
+    "question": "امام سجاد(ع) به فرزندش توصیه کرد با چه پنج گروهی دوستی نکند و چرا؟",
+    "ground_truth": "دروغ‌گو (مانند سراب دور را نزدیک و نزدیک را دور نشان می‌دهد)، فاسق (تو را به لقمه‌ای یا کمتر می‌فروشد)، بخیل (در زمان نیاز شدید رهایت می‌کند)، احمق (می‌خواهد سود برساند اما زیان می‌رساند) و قاطع رحم (که در سه آیه‌ی قرآن مورد لعن قرار گرفته است).",
+    "context": "امام سجاد(ع) به فرزندش توصیه کرد با پنج گروه دوستی نکند: دروغ‌گو: مانند سراب دور را نزدیک و نزدیک را دور نشان می‌دهد. فاسق: تو را به لقمه‌ای یا کمتر می‌فروشد. بخیل: در زمان نیاز شدید رهایت می‌کند. احمق: می‌خواهد سود برساند اما زیان می‌رساند. قاطع رحم: در سه آیه‌ی قرآن مورد لعن قرار گرفته است."
+  },
+  {
+    "question": "سه نظریه درباره رابطه اخلاق و سیاست کدامند و نظریه مقبول کتاب کدام است؟",
+    "ground_truth": "نظریه جدایی اخلاق از سیاست (مانند ماکیاولی)، نظریه اصالت سیاست و تبعیت اخلاق از سیاست (مانند سخن لنین) و نظریه اصالت اخلاق و تبعیت سیاست از اخلاق. نظریه مقبول کتاب سومی است؛ یعنی اصالت با اخلاق است و رفتارهای سیاسی نیز مانند سایر افعال اختیاری موضوع ارزش‌گذاری اخلاقی‌اند و معیارها برای زمامداران و شهروندان یکسان است.",
+    "context": "نظریه‌ی مقبول کتاب این است که اصالت با اخلاق است و رفتارهای سیاسی هم مانند سایر افعال اختیاری موضوع ارزش‌گذاری اخلاقی‌اند؛ معیارها برای زمامداران و شهروندان یکسان است. الگوی عملی آن امام علی(ع) است."
+  },
+  {
+    "question": "غیرت و حسد چه تفاوتی با هم دارند؟",
+    "ground_truth": "غیرت از فضایل و حسد از رذایل اخلاقی است. حسد ریشه در خودخواهی دارد و آرزوی منفی زوال نعمت از دیگران است، اما غیرت ریشه در احساسات اجتماعی و نوع‌دوستانه دارد و خواست مثبتی است. غیرت بی‌جا و افراطی نیز به بدگمانی می‌کشد و مذموم است.",
+    "context": "غیرت با حسد فرق دارد: حسد ریشه در خودخواهی دارد و غیرت ریشه در احساسات اجتماعی و نوع‌دوستانه؛ حسد آرزوی زوال نعمت و غیرت خواست مثبت است."
+  },
+  {
+    "question": "چرا رگرسیون خطی برای داده‌های شمارشی مناسب نیست؟",
+    "ground_truth": "سه محدودیت دارد: ممکن است تعداد منفی پیش‌بینی کند در حالی که تعداد رویداد نمی‌تواند منفی باشد؛ واریانس داده‌های شمارشی معمولاً با میانگین مرتبط است و فرض واریانس ثابت برقرار نیست (ناهمسانی واریانس)؛ و توزیع نرمال با ماهیت گسسته و نامنفی پاسخ سازگار نیست.",
+    "context": "پیش‌بینی منفی: رگرسیون خطی می‌تواند تعداد منفی پیش‌بینی کند، درحالی‌که تعداد رویداد نمی‌تواند منفی باشد. ناهمسانی واریانس (Heteroscedasticity): واریانس داده‌های شمارشی معمولاً با میانگین ارتباط دارد. نامناسب بودن توزیع نرمال: توزیع نرمال الزاماً با ماهیت گسسته و نامنفی پاسخ سازگار نیست."
+  },
+  {
+    "question": "تابع احتمال توزیع پواسن چیست و میانگین و واریانس آن چه رابطه‌ای دارند؟",
+    "ground_truth": "اگر Y ~ Poisson(lambda) باشد، P(Y=y) = e^(-lambda) * lambda^y / y! برای y = 0, 1, 2, ... و lambda > 0. در این توزیع میانگین و واریانس برابرند: E(Y) = Var(Y) = lambda. این ویژگی در بررسی برازش و پراکندگی مدل اهمیت دارد.",
+    "context": "تابع احتمال: P(Y = y) = e^(-λ) λ^y / y!, y = 0, 1, 2, ..., λ > 0. ویژگی مهم توزیع پواسن: E(Y) = λ, Var(Y) = λ. یعنی میانگین و واریانس برابرند."
+  },
+  {
+    "question": "در رگرسیون پواسن از چه تابع پیوندی استفاده می‌شود و چرا میانگین پیش‌بینی‌شده مثبت می‌ماند؟",
+    "ground_truth": "از تابع پیوند لگاریتمی استفاده می‌شود: log(lambda_i) = beta0 + beta1*X_i1 + ... + betap*X_ip؛ بنابراین lambda_i = exp(beta0 + beta1*X_i1 + ...). چون تابع نمایی همواره مثبت است، مثبت بودن میانگین پیش‌بینی‌شده تضمین می‌شود.",
+    "context": "تابع پیوند لگاریتمی (Log Link): log(λ_i) = β0 + β1 X_i1 + ... + βp X_ip. پس: λ_i = exp(β0 + β1 X_i1 + ... + βp X_ip). تابع نمایی مثبت بودن λ_i را تضمین می‌کند."
+  },
+  {
+    "question": "ضرایب رگرسیون پواسن چگونه تفسیر می‌شوند؟ اگر ضریب یک متغیر 0.2 باشد معنی آن چیست؟",
+    "ground_truth": "با افزایش یک واحدی X_j و ثابت ماندن سایر متغیرها، میانگین مورد انتظار در e^(beta_j) ضرب می‌شود که نسبت نرخ وقوع (Rate Ratio) نام دارد؛ درصد تغییر برابر 100(e^(beta_j) - 1) است. اگر beta = 0.2 باشد، e^0.2 تقریباً 1.22 است، یعنی میانگین مورد انتظار حدود 1.22 برابر یا 22 درصد بیشتر می‌شود.",
+    "context": "e^(β_j) نسبت نرخ وقوع (Rate Ratio) است. درصد تغییر میانگین مورد انتظار: 100 (e^(β_j) - 1) %. مثال: اگر β_1 = 0.2، آنگاه: e^0.2 ≈ 1.22. یعنی میانگین مورد انتظار تعداد رویدادها تقریباً ۱٫۲۲ برابر، یا حدود ۲۲ درصد بیشتر می‌شود."
+  },
+  {
+    "question": "جمله offset در داده‌های Ships چه کاربردی دارد؟",
+    "ground_truth": "اگر متغیر service مدت زمان مواجهه با خطر را نشان دهد، برای مدل‌سازی نرخ خسارت از جمله offset یعنی log(service_i) استفاده می‌شود و ضریب آن برابر یک تثبیت می‌گردد. این صورت‌بندی فقط وقتی مناسب است که هدف مدل‌سازی نرخ با در نظر گرفتن زمان مواجهه باشد.",
+    "context": "اگر service مدت مواجهه با خطر را نشان دهد، ممکن است مدل‌سازی نرخ با جمله offset مناسب باشد: log(λ_i) = β0 + β1 X_i1 + ... + log(service_i). در این حالت ضریب log(service_i) برابر یک تثبیت می‌شود."
+  },
+  {
+    "question": "در تمرین Bike Sharing متغیر پاسخ کدام است و متغیرهای توضیحی چیستند؟",
+    "ground_truth": "متغیر پاسخ cnt (تعداد کل دوچرخه‌های کرایه‌شده) است. متغیرهای توضیحی عبارت‌اند از temp (دمای نرمال‌شده)، hum (رطوبت)، windspeed (سرعت باد)، season (فصل، عامل کیفی) و workingday (روز کاری، صفر یا یک).",
+    "context": "cnt: تعداد کل دوچرخه‌های کرایه‌شده؛ متغیر پاسخ. temp: دمای نرمال‌شده. hum: رطوبت. windspeed: سرعت باد. season: فصل؛ عامل کیفی. workingday: روز کاری؛ صفر یا یک."
+  },
+  {
+    "question": "معیارهای RMSE و MAE چگونه تعریف می‌شوند و برای چه منظوری به کار می‌روند؟",
+    "ground_truth": "RMSE برابر ریشه میانگین مربعات خطاست: sqrt((1/n) * sum (y_i - yhat_i)^2) و MAE برابر میانگین قدرمطلق خطاست: (1/n) * sum |y_i - yhat_i|. برای مقایسه‌ی دقت پیش‌بینی مدل خطی و پواسن روی مجموعه ارزیابی یکسان به کار می‌روند و مقدار کمتر یعنی خطای کمتر.",
+    "context": "RMSE = sqrt( (1/n) Σ_{i=1}^{n} (y_i - ŷ_i)^2 ). MAE = (1/n) Σ_{i=1}^{n} |y_i - ŷ_i|. در این روابط y_i مقدار مشاهده‌شده و ŷ_i مقدار پیش‌بینی‌شده است. مقدار کمتر هر معیار نشان‌دهنده خطای کمتر بر اساس همان معیار است."
+  },
+  {
+    "question": "برای بررسی نقاط اثرگذار در مدل پواسن چه کارهایی باید انجام داد و چه هشداری درباره حذف مشاهده‌ها داده شده است؟",
+    "ground_truth": "باید شاخص‌های تشخیصی (باقیمانده‌های پیرسون و انحراف، اهرم و معیارهای اثرگذاری) را محاسبه کرد، نقاط اثرگذار را شناسایی و نمودارهای مناسب رسم کرد و اثر حذف آن‌ها را با مقایسه‌ی ضرایب، خطاهای استاندارد، پیش‌بینی‌ها و معیارهای برازش سنجید. حذف مشاهده صرفاً به دلیل غیرعادی بودن مجاز نیست و ابتدا باید صحت داده و دلیل اثرگذاری بررسی شود.",
+    "context": "برای سنجش اثر حذف مشاهده، مدل را با همه داده‌ها و سپس بدون مشاهده‌های مشکوک برازش دهید و تغییر ضرایب، خطاهای استاندارد، پیش‌بینی‌ها و معیارهای برازش را مقایسه کنید. حذف مشاهده صرفاً به دلیل غیرعادی بودن آن مجاز نیست؛ ابتدا صحت داده و دلیل اثرگذاری را بررسی کنید."
+  },
+  {
+    "question": "پراکندگی بیش از حد (overdispersion) در مدل پواسن به چه معناست؟",
+    "ground_truth": "در مدل پواسن استاندارد میانگین و واریانس شرطی برابرند. پراکندگی بیش از حد یعنی واریانس بیش از این مقدار باشد که می‌تواند نشانه نامناسب بودن فرض پواسن برای داده‌ها باشد.",
+    "context": "در مدل پواسن استاندارد، میانگین و واریانس شرطی برابرند. پراکندگی بیش از حد می‌تواند نشانه نامناسب بودن فرض پواسن باشد."
+  },
+  {
+    "question": "مرتبه اجرایی تابع f(n) = 5n^2 + 3n + 4 چیست و چرا؟",
+    "ground_truth": "مرتبه اجرایی O(n^2) است، چون مؤثرترین جمله n^2 است و از همه جملات سریع‌تر رشد می‌کند. به طور کلی مرتبه چندجمله‌ای درجه m برابر O(n^m) است.",
+    "context": "مرتبه اجرایی تابع f(n)=a_m n^m + a_{m-1}n^{m-1}+...+a_1 n + a_0 برابر O(n^m) می‌باشد. مثال: مرتبه اجرایی تابع f(n)=5n^2+3n+4 کدام است؟ حل: مرتبه اجرایی تابع f برابر O(n^2) می‌باشد، چون مؤثرترین عبارت n^2 می‌باشد، یعنی از همه جملات سریع‌تر رشد می‌کند."
+  },
+  {
+    "question": "مرتبه اجرایی حلقه‌ای که شمارنده i در هر بار دو برابر می‌شود (for i=1; i<=n; i=i*2) چیست؟",
+    "ground_truth": "چون i مقادیر 1، 2، 4، 8، 16 و ... را می‌گیرد، مرتبه اجرایی O(log2 n) است. این را می‌توان به صورت log n یا lg n هم نوشت.",
+    "context": "for (i = 1; i <= n; i = i * 2) x = x + 1; حل: چون i مقادیر 1, 2, 4, 8, 16, ... را می‌گیرد، مرتبه اجرایی برابر O(log_2 n) می‌باشد. تذکر: می‌توان به جای log_2 n از واژه خلاصه log n و یا lg n استفاده کرد."
+  },
+  {
+    "question": "مرتبه اجرایی حلقه‌های پشت‌سرهم با حلقه‌های تودرتو چگونه محاسبه می‌شود؟",
+    "ground_truth": "برای حلقه‌های پشت‌سرهم (غیرمتداخل) مرتبه‌ها با هم جمع می‌شوند، مثلاً دو حلقه n و m بار می‌شود O(n+m). برای حلقه‌های تودرتو مرتبه اجرایی از ضرب مرتبه حلقه‌ها به دست می‌آید، مثلاً دو حلقه تودرتوی n بار می‌شود O(n^2).",
+    "context": "حلقه اول n مرتبه و حلقه دوم m مرتبه اجرا می‌شود. مرتبه برابر O(n+m) می‌باشد. اگر حلقه‌ها تودرتو باشند، مرتبه اجرایی از ضرب مرتبه اجرایی حلقه‌ها به دست می‌آید."
+  },
+  {
+    "question": "مجموع i از 1 تا n و مجموع i^2 از 1 تا n برابر چیست؟",
+    "ground_truth": "مجموع i از 1 تا n برابر n(n+1)/2 و مجموع i^2 از 1 تا n برابر n(n+1)(2n+1)/6 است. همچنین مجموع i^3 برابر (n(n+1)/2)^2 است.",
+    "context": "sum_{i=1}^{n} i = sum_{i=0}^{n} i = n(n+1)/2. sum_{i=1}^{n} i^2 = n(n+1)(2n+1)/6. sum_{i=1}^{n} i^3 = (n(n+1)/2)^2."
+  },
+  {
+    "question": "تابع بازگشتی ب.م.م (بزرگ‌ترین مقسوم‌علیه مشترک) چگونه تعریف می‌شود و f(18,4) چند است؟",
+    "ground_truth": "f(a,b) = a اگر b = 0 باشد، و f(a,b) = f(b, a mod b) اگر b > 0. برای f(18,4): f(18,4) = f(4,2) = f(2,0) = 2 که ب.م.م دو عدد 18 و 4 است.",
+    "context": "بزرگ‌ترین مقسوم‌علیه مشترک (ب.م.م): f(a,b) = a اگر b=0 ؛ f(b, a mod b) اگر b>0. مثال (ب.م.م): f(18,4)=f(4,2)=f(2,0)=2 ؛ تابع بزرگ‌ترین مقسوم‌علیه مشترک دو عدد ۱۸ و ۴ را محاسبه می‌کند."
+  },
+  {
+    "question": "مقدار تابع آکرمان f(1,1) چقدر است و روابط f(1,n) و f(2,n) چیست؟",
+    "ground_truth": "f(1,1) = f(0, f(1,0)) و f(1,0) = f(0,1) = 2 پس f(1,1) = f(0,2) = 3. در تابع آکرمان f(1,n) = n+2 و f(2,n) = 2n+3.",
+    "context": "مثال (آکرمان): f(1,1) = f(0, f(1,0)); f(1,0) = f(0,1) = 2; f(1,1) = f(0,2) = 3. در تابع آکرمان روابط زیر برقرار است: f(1,n)=n+2, f(2,n)=2n+3."
+  },
+  {
+    "question": "با قضیه اصلی (Master) مرتبه اجرایی T(n) = 9T(n/3) + n را به دست آورید.",
+    "ground_truth": "در اینجا a = 9، b = 3 و f(n) = n است و n^(log_3 9) = n^2. چون f(n) = O(n^(2-epsilon))، طبق حالت اول قضیه اصلی T(n) = Theta(n^2).",
+    "context": "مثال ۱: مرتبه اجرایی T(n)=9T(n/3)+n کدام است؟ حل: a=9, b=3, f(n)=n و n^{log_3 9}=n^2. از آنجا که f(n)=O(n^{2-ε})، طبق حالت اول: T(n)=Θ(n^2)."
+  },
+  {
+    "question": "رابطه بازگشتی تعداد ضرب‌ها در تابع فاکتوریل چیست و جواب آن چه مرتبه‌ای دارد؟",
+    "ground_truth": "T(n) = T(n-1) + 1 با شرط اولیه T(0) = 0. حل آن T(n) = n است و بنابراین T(n) از مرتبه O(n) می‌باشد.",
+    "context": "اگر تعداد ضرب‌ها را با T(n) نمایش دهیم: T(n)=T(n-1)+1, T(0)=0. چند مقدار اولیه: T(1)=1, T(2)=2, T(3)=3. نتیجه می‌شود T(n)=n و بنابراین T(n) ∈ O(n)."
+  },
+  {
+    "question": "مرتبه زمانی قطعه کد با حلقه for i=1..n و حلقه داخلی for j=1; j<=n; j=j+i چیست؟",
+    "ground_truth": "به ازای i=1 دستور n بار، به ازای i=2 تقریباً n/2 بار و ... اجرا می‌شود: n(1 + 1/2 + 1/3 + ... + 1/n) که تقریباً n ln n است، بنابراین مرتبه O(n log n) می‌باشد.",
+    "context": "به ازای i=1 دستور n بار، به ازای i=2 دستور n/2 بار و … اجرا می‌شود: n + n/2 + n/3 + ... + n/n = n(1+1/2+1/3+...+1/n) ≈ n ln n = O(n log n)."
+  },
+  {
+    "question": "حاصل تابع Q(a,b) با Q(a,b)=0 برای a<b و Q(a,b)=1+Q(a-b,b) برای a>=b در Q(5861, 7) چیست و تابع چه کاری انجام می‌دهد؟",
+    "ground_truth": "این تابع خارج‌قسمت صحیح تقسیم a بر b را محاسبه می‌کند؛ بنابراین Q(5861,7) برابر 5861 div 7 = 837 است.",
+    "context": "حاصل تابع Q(5861, 7) کدام است؟ گزینه ۱ درست است. این تابع خارج‌قسمت صحیح تقسیم a بر b را محاسبه می‌کند: 5861 div 7 = 837."
+  },
+  {
+    "question": "What is the definition of a multivariate normal distribution according to Muirhead?",
+    "ground_truth": "A random vector X has an m-variate normal distribution if for every vector a in R^m the linear function a'X is univariate normal. The mean and covariance matrix then exist and determine the distribution, written X ~ N_m(mu, Sigma).",
+    "context": "Definition 1.2.3: `X` has an m-variate normal distribution if `a'X` is univariate normal for every `a` in R^m. The mean and covariance matrix then exist and determine the distribution (Theorem 1.2.4). It is written `X ~ N_m(μ, Σ)`."
+  },
+  {
+    "question": "What is the characteristic function and density function of N_m(mu, Sigma)?",
+    "ground_truth": "The characteristic function is phi(t) = exp(i mu't - (1/2) t'Sigma t). When Sigma is positive definite the density is f(x) = (2 pi)^(-m/2) (det Sigma)^(-1/2) exp[-(1/2)(x - mu)' Sigma^(-1) (x - mu)].",
+    "context": "The characteristic function (Theorem 1.2.5) is: φ_X(t) = exp(i μ't - (1/2) t'Σt). If Σ is positive definite, the density function exists (Theorem 1.2.9): f(x) = (2π)^(-m/2) (det Σ)^(-1/2) exp[ -(1/2)(x - μ)' Σ^(-1) (x - μ) ]"
+  },
+  {
+    "question": "What is the conditional distribution of X1 given X2 for a normal vector (Theorem 1.2.11)?",
+    "ground_truth": "The conditional distribution of X1 given X2 is normal, N_k(mu1 + Sigma12 Sigma22^- (X2 - mu2), Sigma11.2), where Sigma11.2 = Sigma11 - Sigma12 Sigma22^- Sigma21. The conditional mean is the linear regression function of X1 on X2 and the conditional covariance does not depend on X2.",
+    "context": "Then `X1 - Σ12 Σ22^- X2` is `N_k(μ1 - Σ12 Σ22^- μ2, Σ11.2)` and independent of `X2`. The conditional distribution of `X1` given `X2` is: `N_k( μ1 + Σ12 Σ22^- (X2 - μ2), Σ11.2 )`. The conditional mean is the regression function of `X1` on `X2`. It is linear in `X2`, and the conditional covariance `Σ11.2` does not depend on `X2`."
+  },
+  {
+    "question": "What is the Wishart density function and when does it exist?",
+    "ground_truth": "If A ~ W_m(n, Sigma) with n >= m, its density is f(A) = etr(-(1/2) Sigma^(-1) A) (det A)^((n-m-1)/2) / [2^(mn/2) Gamma_m(n/2) (det Sigma)^(n/2)] for A > 0. For m = 1 it reduces to the chi-squared density, and it remains valid for noninteger n > m - 1.",
+    "context": "Theorem 3.2.1: if `A ~ W_m(n, Σ)` with `n ≥ m`, its density is: `f(A) = etr(-(1/2) Σ^(-1) A) (det A)^((n-m-1)/2) / [ 2^(mn/2) Γ_m(n/2) (det Σ)^(n/2) ],  A > 0`. For `m = 1` this reduces to the chi-squared density, so `A/σ² ~ χ²_n`. The density remains valid for noninteger `n > m - 1`."
+  },
+  {
+    "question": "What is the distribution of Hotelling's T-squared statistic?",
+    "ground_truth": "With T^2 = N Xbar' S^(-1) Xbar, the quantity (n - m + 1) T^2 / (n m) has a noncentral F distribution F_{m, n-m+1}(delta) with delta = N mu' Sigma^(-1) mu. Under the null hypothesis mu = 0 it is a central F distribution.",
+    "context": "Theorem 3.2.13 (Hotelling's T² distribution): with `T² = N X̄' S^(-1) X̄`: `(n - m + 1) T² / (n m)  ~  F_{m, n-m+1}(δ),   δ = N μ' Σ^(-1) μ`. The test of `H: μ = 0` rejects when this exceeds the F critical value; the distribution is central F under the null hypothesis."
+  },
+  {
+    "question": "What does Bartlett's decomposition state for a Wishart matrix?",
+    "ground_truth": "If A ~ W_m(n, I) and A = T'T with T upper triangular with positive diagonal, then the elements of T are independent, t_ii^2 has a chi-squared distribution with n - i + 1 degrees of freedom, and t_ij ~ N(0,1) for i < j.",
+    "context": "Theorem 3.2.14: if `A ~ W_m(n, I)` and `A = T'T`, then the elements of `T` are independent, `t_ii² ~ χ²_(n-i+1)`, and `t_ij ~ N(0, 1)` for `i < j`."
+  },
+  {
+    "question": "What is the James-Stein estimator of a multivariate normal mean and when does it beat the usual estimate?",
+    "ground_truth": "For X ~ N_m(mu, I) with squared-error loss, the James-Stein estimate is delta(X) = (1 - (m - 2)/X'X) X. It beats the maximum likelihood estimate X when m >= 3, which is therefore inadmissible although it is minimax. Its risk equals 2 at mu = 0 and approaches m as mu'mu goes to infinity.",
+    "context": "Stein (1956) showed `X` is admissible for `m ≤ 2` and inadmissible for `m ≥ 3`. The James-Stein estimate for `m ≥ 3` is: `δ(X) = (1 - (m - 2) / X'X) X`. The risk equals 2 at `μ = 0` and approaches `m` as `μ'μ → ∞`. `X` is minimax, and so is any estimate that beats it."
+  },
+  {
+    "question": "What is the ellipticity statistic V used in the sphericity test and what is its asymptotic null distribution?",
+    "ground_truth": "To test Sigma = lambda I the likelihood ratio test rejects for small V = det A / [(1/m) tr A]^m, the ratio of the geometric to arithmetic mean of the latent roots (to the power m). Asymptotically -2 rho log Lambda is chi-squared with (m+2)(m-1)/2 degrees of freedom, where rho = 1 - (2m^2 + m + 2)/(6 m n).",
+    "context": "Theorem 8.3.2: the likelihood ratio test rejects for small values of the ellipticity statistic: `V = det A / [ (1/m) tr A ]^m,   Λ^(2/N) = V`. Theorem 8.3.7: `-2 ρ log Λ` is asymptotically `χ²` with `(m+2)(m-1)/2` degrees of freedom, with: `ρ = 1 - (2m² + m + 2) / (6 m n)`"
+  },
+  {
+    "question": "What are canonical correlation coefficients and how do the population canonical variables optimally relate the two sets of variables?",
+    "ground_truth": "For X (p by 1) and Y (q by 1), linear transformations U = L1 X and V = L2 Y reduce the covariance to a canonical form involving only rho_1 >= ... >= rho_k > 0, the population canonical correlation coefficients, whose squares are the nonzero latent roots of Sigma11^(-1) Sigma12 Sigma22^(-1) Sigma21. Each rho_i is the maximum correlation between linear combinations of X and Y that are uncorrelated with the previous canonical variables.",
+    "context": "The ρ_i are the population canonical correlations; `ρ_i²` are the nonzero latent roots of `Σ11^(-1) Σ12 Σ22^(-1) Σ21`. Theorem 11.3.1: `ρ_i` is the maximum of the correlation of `a'X` and `β'Y` over unit-variance combinations uncorrelated with the previous canonical variables."
+  },
+  {
+    "question": "What is the null distribution of Wilks' likelihood ratio statistic W in the multivariate linear model?",
+    "ground_truth": "Under the null hypothesis, W = det B / det(A + B) has the same distribution as a product of independent beta random variables, V_i ~ beta((n - p - i + 1)/2, r/2). For m = 1 this is the F statistic and for r = 1 it is Hotelling's T-squared.",
+    "context": "Theorem 10.5.3: under `H`, `W` has the distribution of a product of independent beta variables `∏ V_i`, with `V_i ~ beta((n - p - i + 1)/2, r/2)`. For `m = 1` this is the F statistic; for `r = 1` it is Hotelling's T²."
+  },
+  {
+    "question": "What is the difference between descriptive and inferential statistics according to Spatz?",
+    "ground_truth": "Descriptive statistics produce a number or figure that summarizes or describes a set of data (such as the mean). Inferential statistics use measurements from a sample to reach conclusions about a larger, unmeasured population, taking chance factors into account.",
+    "context": "One technique, descriptive statistics, produces a number or a figure that summarizes or describes a set of data. The other statistical technique is inferential statistics. With inferential statistics, you use measurements from a sample to reach conclusions about a larger, unmeasured population. Inferential statistics is a method that takes chance factors into account when samples are used to reach conclusions about populations."
+  },
+  {
+    "question": "How do Spatz define population, sample, parameter, and statistic, and which of them are constant?",
+    "ground_truth": "A population consists of all the scores of some specified group and a sample is a subset of a population. A parameter is a numerical or nominal characteristic of a population and a statistic is a numerical or nominal characteristic of a sample. Parameters are constant while statistics are variable, because different samples from the same population usually give different statistics.",
+    "context": "A population consists of all the scores of some specified group. A sample is a subset of a population. A parameter is some numerical (number) or nominal (name) characteristic of a population. A statistic is some numerical or nominal characteristic of a sample. In sum, parameters are constant; statistics are variable."
+  },
+  {
+    "question": "What are the four scales of measurement identified by S. S. Stevens and how do they differ?",
+    "ground_truth": "The four scales are nominal (numbers are only names), ordinal (numbers are ranks, indicating greater than or less than), interval (equal differences mean equal amounts but zero is arbitrary) and ratio (has a true zero point, so ratio statements are meaningful). Each scale has the properties of the previous ones plus one more.",
+    "context": "S. S. Stevens identified four different scales of measurement, each of which carries a different set of information. The four scales are nominal, ordinal, interval, and ratio. The ratio scale has all the characteristics of the nominal, ordinal, and interval scales plus one other: It has a true zero point, which indicates a complete absence of the thing measured."
+  },
+  {
+    "question": "What are the lower and upper limits of a recall score of 7 in a quantitative variable?",
+    "ground_truth": "A score of 7 represents all values between 6.5 and 7.5; 6.5 is the lower limit and 7.5 is the upper limit. The limits extend halfway to the next value on the scale.",
+    "context": "Figure 1.1 shows that a score of 7 is used for a range of possible recall values—the range from 6.5 to 7.5. The number 6.5 is the lower limit and 7.5 is the upper limit of the score of 7."
+  },
+  {
+    "question": "What are the independent and dependent variables in a simple experiment, as illustrated by the spaghetti sauce example?",
+    "ground_truth": "The independent variable is the variable controlled by the researcher whose levels are chosen; in the example it is marjoram, with two levels, present and absent. The dependent variable is the observed variable expected to change as a result; in the example it is the number of favorable comments about the sauce.",
+    "context": "The dependent variable is the number of favorable comments, which is a measure of the taste of the sauce. The independent variable is marjoram, which has two levels: present and absent."
+  },
+  {
+    "question": "What is an extraneous variable and how can it be controlled?",
+    "ground_truth": "An extraneous variable is a variable other than the independent variable that may affect the dependent variable. The simplest way to remove it is to make all participants equal on that variable, for example by mixing one pot of sauce and dividing it into two batches, or by testing each participant at both levels of the independent variable as Zeigarnik did.",
+    "context": "The simplest way to remove an extraneous variable is to be sure that all participants are equal on that variable. For example, you can ensure that the sauces are the same except for marjoram by mixing up one pot of ingredients, dividing it into two batches, adding marjoram to one batch but not the other, and then cooking."
+  },
+  {
+    "question": "What was the Zeigarnik effect and what did the experiment find?",
+    "ground_truth": "The Zeigarnik effect is that people remember tasks they fail to complete better than tasks they complete. In Zeigarnik's experiment half of about 20 tasks were interrupted, and participants later recalled about 7 interrupted tasks compared with about 4 completed tasks.",
+    "context": "Today there is a lot of evidence that people remember the tasks they fail to complete better than the tasks they complete. This is known as the Zeigarnik effect. Later, when the participants were asked to recall the tasks they worked on, they listed more of the interrupted tasks (about 7) than the completed tasks (about 4)."
+  },
+  {
+    "question": "What three steps does Spatz recommend for analyzing a data set?",
+    "ground_truth": "First, explore the data: read the information, examine the data and calculate descriptive statistics. Second, ask whether the differences observed could be due to chance, usually answered with an inferential statistic. Third, write the story the data reveal, using descriptive and inferential statistics to support the conclusions, in journal style.",
+    "context": "I recommend that you analyze a data set in three steps. 1. Exploratory. Read all the information and examine the data. 2. Could the differences observed be due to chance? 3. Write the story the data reveal."
+  },
+  {
+    "question": "What was John Tukey's contribution to statistics according to the text?",
+    "ground_truth": "John Tukey (1915-2000) promoted Exploratory Data Analysis, the idea of exploring data to see what it reveals rather than only using statistical analyses to nail down a conclusion. He invented techniques such as the boxplot that reveal several characteristics of a data set simultaneously.",
+    "context": "This shift owes much of its impetus to John Tukey (1915–2000), who promoted Exploratory Data Analysis. Tukey invented techniques such as the boxplot (Chapter 5) that reveal several characteristics of a data set simultaneously."
+  },
+  {
+    "question": "How does Spatz relate statistics to epistemology?",
+    "ground_truth": "Epistemology is the study of the nature of knowledge, with reason and experience as two main answers to how we acquire knowledge. Statistics has its foundations in mathematics and therefore in reason; using logical reasoning is called rationalism, while experimental design also includes experience and observation.",
+    "context": "Statistics has its foundations in mathematics. Statistics, therefore, is based on reason. Using logical reasoning is called rationalism, which is one approach to questions of epistemology. (Experimental design is more complex; it includes experience and observation as well as reasoning.)"
+  },
+  {
+    "question": "Why does Spatz say statistics and experimental design differ, using the story of Sam and Miss Snug?",
+    "ground_truth": "Statistics involves the manipulation of numbers and the conclusions based on them (Miss Snug computes 12 miles in 4 hours). Experimental design deals with all the things that influence the numbers you actually get (Sam notes tiredness, blisters, berries). The text sides with Miss Snug but includes aspects of experimental design throughout.",
+    "context": "Statistics involves the manipulation of numbers and the conclusions based on those manipulations (Miss Snug). Experimental design (also called research methods) deals with all the things that influence the numbers you get (Sam and Albert)."
+  },
+  {
+    "question": "What is the sample variance formula and why is it divided by n-1?",
+    "ground_truth": "The sample variance is s^2 = (1/(n-1)) * sum (x_i - xbar)^2. It is divided by n-1 to create an unbiased estimator of the population variance, whereas the population variance divides by N.",
+    "context": "Sample variance: `s² = (1/(n-1)) Σ_{i=1}^{n} (x_i - x̄)²`. The sample variance is divided by `n-1` to create an unbiased estimator of the population variance. More spread means more variance."
+  },
+  {
+    "question": "How is the median computed for odd and even datasets, with the examples given?",
+    "ground_truth": "The median is the middle value after sorting. With an odd number of values it is the middle one (the example with 13 values has median 12). With an even number of values it is the mean of the two middle values (for the 14-value example the middle values are 29 and 27, so the median is 28).",
+    "context": "If the dataset has an odd number of values, the median is the middle value. If the dataset has an even number of values, the median is the mean of the two middle values. Example (odd): 23, 21, 18, 16, 15, 13, 12, 10, 9, 7, 6, 5, 2. Median = 12. Middle values: 29 and 27. Median = (27 + 29) / 2 = 28"
+  },
+  {
+    "question": "What are the mean, variance and PMF of the Poisson distribution in the statistics notes?",
+    "ground_truth": "The Poisson PMF is P(X=x) = e^(-lambda) lambda^x / x!, for x = 0, 1, 2, ..., where lambda is the expected number of events per interval. The mean is lambda and the variance is also lambda. It describes the number of events in a fixed time interval, such as hospital visits per hour.",
+    "context": "Poisson Distribution: Discrete random variable. Describes the number of events occurring in a fixed time interval. PMF: `P(X = x) = e^(-λ) λ^x / x!`. Mean: `E(X) = λ`. Variance: `Var(X) = λ`"
+  },
+  {
+    "question": "What does the empirical rule (68-95-99.7) of the normal distribution state?",
+    "ground_truth": "About 68.3% of values lie within 1 standard deviation of the mean, 95.5% within 2 standard deviations, and 99.7% within 3 standard deviations.",
+    "context": "Also known as the 68-95-99.7 rule: 68.3% of values are within 1 standard deviation of the mean. 95.5% of values are within 2 standard deviations of the mean. 99.7% of values are within 3 standard deviations of the mean."
+  },
+  {
+    "question": "In the IQ example with mean 100 and SD 15, what percentage has an IQ lower than 85?",
+    "ground_truth": "The z-score is (85 - 100)/15 = -1. From the z-table the area is 0.1587, so about 15.87% of people have an IQ lower than 85.",
+    "context": "Example 1: Average IQ = 100, SD = 15. What percentage has IQ lower than 85? `z = (85 - 100) / 15 = -1`. From z-table, area = 0.1587. So about 15.87% have IQ lower than 85."
+  },
+  {
+    "question": "When should a Z-test be used and when a T-test according to the notes?",
+    "ground_truth": "Use a Z-test when the population standard deviation (variance) is known, or the sample size is greater than 30 with large samples; the Z statistic is (xbar - mu)/(sigma/sqrt(n)). Use a T-test when the population standard deviation is unknown and the sample is small (n < 30); the statistic is (xbar - mu)/(s/sqrt(n)) with df = n - 1.",
+    "context": "Z-test: population variance known, or sample size > 30 with unknown variance. T-test: sample size < 30 and population variance unknown. Degrees of freedom: `df = n - 1`"
+  },
+  {
+    "question": "In the chi-square goodness-of-fit example with n=500, what is the test statistic and the decision?",
+    "ground_truth": "Expected counts are 100, 150 and 250 for the three weight groups and observed counts are 140, 160 and 200. The statistic is chi-square = 16 + 0.66 + 10 = about 26.66, with df = 2 and critical value 5.991 at alpha 0.05. Since 26.66 > 5.991, H0 is rejected.",
+    "context": "Degrees of freedom: df = k - 1 = 3 - 1 = 2. Critical value from Chi-Square table: 5.991. `= 16 + 0.66 + 10 = 26.66`. Since `26.66 > 5.991`, reject H0."
+  },
+  {
+    "question": "What are the hypotheses, degrees of freedom and F statistic in one-way ANOVA?",
+    "ground_truth": "H0 states that all group means are equal (mu1 = mu2 = ... = muk) and H1 that at least one mean is not equal. With N total observations and a groups, df_between = a - 1, df_within = N - a and df_total = N - 1. The F statistic is the variation between samples divided by the variation within samples, MS_between / MS_within.",
+    "context": "`H0: μ1 = μ2 = μ3 = ... = μk`. `H1: At least one mean is not equal`. F-statistic: `F = Variation between samples / Variation within samples`. `df_between = a - 1 = 2`. `df_within = N - a = 21 - 3 = 18`. `df_total = N - 1 = 21 - 1 = 20`"
+  },
+  {
+    "question": "What are the conditions of the Central Limit Theorem in the notes?",
+    "ground_truth": "The sample size must be sufficiently large (usually n >= 30), the samples must be independent and identically distributed, and the population distribution must have finite variance. Then the distribution of the sample mean approximates a normal distribution, Xbar ~ N(mu, sigma/sqrt(n)).",
+    "context": "Conditions: 1. Sample size is sufficiently large. Usually `n ≥ 30`. 2. Samples are independent and identically distributed (random variables). 3. Population distribution has finite variance. Notation: `X̄ ~ N(μ, σ/sqrt(n))`"
+  },
+  {
+    "question": "What is the difference between normalization and standardization?",
+    "ground_truth": "Normalization scales using minimum and maximum values to a range like [0,1] or [-1,1], is affected by outliers and uses MinMaxScaler. Standardization (z-score normalization) uses the mean and standard deviation to give zero mean and unit standard deviation, is not bounded to a range, is less affected by outliers and uses StandardScaler; it is useful when the feature is Gaussian.",
+    "context": "Normalization uses minimum and maximum values for scaling. Standardization uses mean and standard deviation for scaling. Normalization scales values between [0,1] or [-1,1]. Standardization is not bounded to a certain range. Normalization is affected by outliers. Standardization is less affected by outliers. Normalization uses MinMaxScaler. Standardization uses StandardScaler."
+  },
+  {
+    "question": "نتیجه ۳.۱ درباره امید ریاضی و ماتریس کوواریانس میانگین نمونه X̄ چه می‌گوید؟",
+    "ground_truth": "اگر X1, ..., Xn نمونه تصادفی از توزیعی با بردار میانگین mu و ماتریس کوواریانس Sigma باشد، X̄ برآوردگر غیرمغرض mu است: E(X̄) = mu، و ماتریس کوواریانس آن برابر Cov(X̄) = (1/n) Sigma یعنی ماتریس واریانس-کوواریانس جامعه تقسیم بر اندازه نمونه است.",
+    "context": "آنگاه X̄ برآوردگر غیرمغرض μ است و ماتریس کوواریانس آن برابر (1/n)Σ است. E(X̄) = μ (بردار میانگین جامعه). Cov(X̄) = (1/n)Σ (ماتریس واریانس-کوواریانس جامعه تقسیم بر اندازه نمونه)."
+  },
+  {
+    "question": "امید ریاضی ماتریس کوواریانس نمونه S_n چقدر است و آیا غیرمغرض است؟",
+    "ground_truth": "E(S_n) = ((n-1)/n) Sigma = Sigma - (1/n) Sigma. بنابراین S_n برآوردگر مغرض Sigma است با مغرضیت E(S_n) - Sigma = -(1/n) Sigma.",
+    "context": "برای ماتریس کوواریانس S_n: E(S_n) = ((n-1)/n)Σ = Σ - (1/n)Σ. S_n برآوردگر مغرض با مغرضیت = E(S_n) - Σ = -(1/n)Σ است."
+  },
+  {
+    "question": "چه برآوردگر غیرمغرضی برای ماتریس کوواریانس جامعه Sigma معرفی می‌شود؟",
+    "ground_truth": "از رابطه E(S_n) = ((n-1)/n) Sigma نتیجه می‌شود که E((n/(n-1)) S_n) = Sigma؛ پس [n/(n-1)] S_n برآوردگر غیرمغرض Sigma است.",
+    "context": "بنابراین: E((n/(n-1))S_n) = Σ (3-10). پس [n/(n-1)]S_n برآوردگر غیرمغرض Σ است، در حالی که S_n برآوردگر مغرض با مغرضیت = E(S_n) - Σ = -(1/n)Σ است."
+  },
+  {
+    "question": "اثبات غیرمغرض بودن X̄ برای بردار میانگین جامعه چگونه انجام می‌شود؟",
+    "ground_truth": "چون X̄ = (X1 + ... + Xn)/n، با استفاده مکرر از خواص امید ریاضی E(X̄) = (1/n)E(X1) + ... + (1/n)E(Xn) = (1/n)mu + ... + (1/n)mu = mu؛ یعنی X̄ غیرمغرض mu است.",
+    "context": "حال، X̄ = (X_1 + X_2 + ... + X_n)/n. استفاده مکرر از خواص امید ریاضی برای دو بردار به دست می‌دهد: E(X̄) = (1/n)E(X_1) + (1/n)E(X_2) + ... + (1/n)E(X_n) = (1/n)μ + (1/n)μ + ... + (1/n)μ = μ"
+  },
+  {
+    "question": "نتایج مربوط به توزیع‌های نمونه‌گیری X̄ و S_n چه فرضیاتی درباره شکل توزیع مشترک متغیرها نیاز دارند؟",
+    "ground_truth": "نتایج مربوط به توزیع‌های نمونه‌گیری X̄ و S_n (مانند غیرمغرض بودن X̄ برای mu و رفتار S_n برای Sigma) بدون وضع فرضیات بیشتر درباره شکل توزیع مشترک زیربنایی متغیرها به دست می‌آیند؛ فقط لازم است نمونه تصادفی از توزیعی با بردار میانگین mu و ماتریس کوواریانس Sigma باشد.",
+    "context": "نتیجه‌گیری‌های مشخصی می‌توان در مورد توزیع‌های نمونه‌گیری X̄ و S_n بدون وضع فرضیات بیشتر در مورد شکل توزیع مشترک زیربنایی متغیرها به دست آورد. به طور خاص، می‌توانیم ببینیم که X̄ و S_n چگونه به عنوان برآوردگرهای بردار میانگین جامعه μ و ماتریس کوواریانس Σ متناظر عمل می‌کنند."
+  },
+  {
+    "question": "اگر مؤلفه‌ها مستقل نباشند یا توزیع‌های حاشیه‌ای یکسان نباشند، چه نوع تابع فاصله‌ای باید در نظر گرفته شود؟",
+    "ground_truth": "در این صورت تأثیر اندازه‌گیری‌های فردی بر موقعیت نامتقارن است و باید تابع فاصله‌ای در نظر گرفت که در آن مختصات به طور نابرابر وزن‌دهی شوند، مانند فاصله‌های آماری یا فرم‌های درجه دوم معرفی‌شده در فصل‌های ۱ و ۲.",
+    "context": "اگر n مؤلفه مستقل نباشند یا توزیع‌های حاشیه‌ای یکسان نباشند، تأثیر اندازه‌گیری‌های فردی (مختصات) بر موقعیت نامتقارن است. در این صورت باید تابع فاصله‌ای را در نظر بگیریم که در آن مختصات به طور نابرابر وزن‌دهی شوند، همانند فاصله‌های «آماری» یا فرم‌های درجه دوم معرفی شده در فصل‌های ۱ و ۲."
+  },
+  {
+    "question": "نقش علم اخلاق و تعریف جامع آن چیست؟",
+    "ground_truth": "جامع‌ترین تعریف این است که علم اخلاق علمی است که با معرفی انواع خوبی‌ها و بدی‌ها، راه‌های کسب خوبی‌ها و دفع بدی‌ها را می‌آموزد؛ یعنی هم بُعد شناختی دارد و هم بُعد عملی و رفتاری، و هدف اصلی آن آموزش شیوه رفتار است.",
+    "context": "جامع‌ترین تعریف علم اخلاق این است که علمی است که با معرفی انواع خوبی‌ها و بدی‌ها، راه‌های کسب خوبی‌ها و دفع بدی‌ها را می‌آموزد. این علم هم بُعد شناختی دارد و هم بُعد عملی و رفتاری، و هدف اصلی آن آموزش شیوه‌ی رفتار است."
+  },
+  {
+    "question": "در رگرسیون پواسن محدودیت‌ها و مشکلات رگرسیون خطی برای تمرین Bike Sharing را چگونه باید بررسی کرد؟",
+    "ground_truth": "باید مشکلات احتمالی مانند پیش‌بینی منفی برای پاسخ شمارشی، ناهمسانی واریانس و نرمال نبودن باقیمانده‌ها را با نمودارها و خروجی مدل بررسی کرد، نه اینکه بدون بررسی قطعی فرض شوند.",
+    "context": "مشکلات احتمالی را بررسی کنید: پیش‌بینی منفی برای پاسخ شمارشی؛ ناهمسانی واریانس؛ نرمال نبودن باقیمانده‌ها. وجود این مشکلات باید با نمودارها و خروجی مدل بررسی شود، نه اینکه بدون بررسی قطعی فرض شود."
+  },
+  {
+    "question": "مرتبه اجرایی حلقه while با i = i / 2 و داخل آن حلقه با j = j / 3 چیست؟",
+    "ground_truth": "حلقه بیرونی با تقسیم بر 2 از مرتبه O(log2 n) و حلقه داخلی با تقسیم بر 3 از مرتبه O(log3 n) است. چون متداخل‌اند، حاصل‌ضرب آن‌ها یعنی O(lg^2 n) مرتبه اجرایی است.",
+    "context": "حلقه داخلی با تقسیم مقدار شمارنده بر ۳، به صورت لگاریتمی با O(log_3 n) اجرا شده و حلقه بیرونی با تقسیم شمارنده بر ۲ به صورت O(log_2 n) اجرا می‌شود. چون دو حلقه متداخل هستند، جواب برابر حاصل‌ضرب است: O(log_2 n * log_3 n) = O(lg^2 n)"
+  },
+  {
+    "question": "تابع بازگشتی f(a)=0 برای a<=1 و f(a)=f(floor(a/2))+1 برای a>1 چه چیزی محاسبه می‌کند و f(18) چند است؟",
+    "ground_truth": "این تابع کف لگاریتم در پایه 2 یعنی floor(log2 a) را محاسبه می‌کند. برای 18: f(18)=f(9)+1، f(9)=f(4)+1، f(4)=f(2)+1، f(2)=f(1)+1 و f(1)=0، پس f(18)=4.",
+    "context": "f(18)=f(9)+1 ; f(9)=f(4)+1 ; f(4)=f(2)+1 ; f(2)=f(1)+1 ; f(1)=0 → f(2)=1, f(4)=2, f(9)=3, f(18)=4. در واقع تابع، floor(log_2 a) را محاسبه می‌کند."
+  },
+  {
+    "question": "In Spatz's text, what is the difference between a qualitative and a quantitative variable?",
+    "ground_truth": "A quantitative variable has levels that indicate different amounts, so a larger score means more of the variable. A qualitative variable has levels that are different kinds, not different amounts, such as gender or political affiliation.",
+    "context": "quantitative variable — Variable whose levels indicate different amounts. qualitative variable — Variable whose levels are different kinds, not different amounts."
+  },
+  {
+    "question": "In the notes, what is the uniform distribution mean and variance, and the candy sales example answer?",
+    "ground_truth": "For a continuous uniform distribution U[a,b] the mean and median are (a+b)/2 and the variance is (b-a)^2/12. For candy sales uniform between 10 and 40, P(15 <= x <= 30) = 15 * 1/30 = 0.5 and P(x >= 30) = 10 * 1/30 = 1/3, about 33%.",
+    "context": "Mean: `(a + b)/2`. Variance: `(b - a)² / 12`. `P(15 ≤ x ≤ 30) = (30 - 15) · 1/(40 - 10) = 15 · 1/30 = 0.5`. `P(x ≥ 30) = (40 - 30) · 1/30 = 10 · 1/30 = 1/3 ≈ 33%`"
+  },
+  {
+    "question": "What is the Kronecker product vec identity given in Muirhead's chapter 2?",
+    "ground_truth": "Lemma 2.2.2 states vec(BXC) = (C' tensor B) vec(X). Consequently if the columns of X are independent with common covariance Sigma, then Cov[vec(BXC)] = C'C tensor B Sigma B'.",
+    "context": "Lemma 2.2.2 links Kronecker products and `vec`: `vec(BXC) = (C' ⊗ B) vec(X)`. Consequently, if the columns of `X` are independent with common covariance `Σ`, then `Cov[vec(BXC)] = C'C ⊗ BΣB'`."
+  }
+]
