@@ -1,225 +1,320 @@
+from __future__ import annotations
 
 import json
-import os
-from pathlib import Path
-from statistics import mean
+import logging
+import math
+import re
+from typing import Any, Callable, Sequence
 
-from rag.generator import OpenRouterClient
+
+logger = logging.getLogger(__name__)
+
+JudgeFn = Callable[[str], str]
 
 
-class RagasEvaluator:
-    """LLM-as-a-Judge evaluator for a RAG dataset."""
+class MetricEvaluationError(Exception):
+    def __init__(
+        self,
+        metric: str,
+        reason: str,
+        raw_response: str | None = None,
+    ):
+        self.metric = metric
+        self.reason = reason
+        self.raw_response = raw_response
+        super().__init__(f"[{metric}] {reason}")
 
-    def __init__(self, dataset_path=None, output_path=None):
-        project_root = Path(__file__).resolve().parent.parent
 
-        self.dataset_path = Path(
-            dataset_path or project_root / "evaluation" / "gold_dataset.json"
-        )
-        self.output_path = Path(
-            output_path or project_root / "evaluation" / "results.json"
-        )
 
-        self.llm_client = OpenRouterClient()
 
-    def load_dataset(self):
-        if not self.dataset_path.exists():
-            raise FileNotFoundError(
-                f"Dataset not found: {self.dataset_path}"
+_FENCE_RE = re.compile(r"^```(?:json)?\s*|\s*```$", re.IGNORECASE)
+
+
+def _extract_json_object(text: str) -> dict[str, Any]:
+    cleaned = _FENCE_RE.sub("", text.strip())
+
+    try:
+        obj = json.loads(cleaned)
+    except json.JSONDecodeError:
+        start = cleaned.find("{")
+        end = cleaned.rfind("}")
+
+        if start == -1 or end <= start:
+            raise
+
+        obj = json.loads(cleaned[start : end + 1])
+
+    if not isinstance(obj, dict):
+        raise ValueError("JSON root must be an object.")
+
+    return obj
+
+
+def _validate_score(value: Any) -> float:
+    if isinstance(value, bool) or not isinstance(value, (int, float)):
+        raise ValueError(f"Score must be numeric: {value!r}")
+
+    score = float(value)
+
+    if not math.isfinite(score) or not 0.0 <= score <= 1.0:
+        raise ValueError(f"Score must be between 0 and 1: {value!r}")
+
+    return score
+
+
+def _call_judge(
+    metric: str,
+    judge_fn: JudgeFn,
+    prompt: str,
+    parser: Callable[[dict[str, Any]], Any],
+    max_retries: int = 2,
+) -> Any:
+    last_reason = "Unknown error"
+    raw_response = None
+
+    for attempt in range(1, max_retries + 2):
+        try:
+            raw_response = judge_fn(prompt)
+        except Exception as exc:
+            last_reason = f"Judge request failed: {exc!r}"
+            logger.error(
+                "%s | attempt %d | %s",
+                metric,
+                attempt,
+                last_reason,
+            )
+            continue
+
+        try:
+            return parser(_extract_json_object(raw_response))
+        except (ValueError, KeyError, TypeError) as exc:
+            last_reason = f"Invalid judge response: {exc}"
+            logger.error(
+                "%s | attempt %d | %s | response: %.500s",
+                metric,
+                attempt,
+                last_reason,
+                raw_response,
             )
 
-        with self.dataset_path.open("r", encoding="utf-8") as file:
-            dataset = json.load(file)
+    raise MetricEvaluationError(metric, last_reason, raw_response)
 
-        if not isinstance(dataset, list):
-            raise ValueError("The dataset must be a JSON array.")
 
-        required_fields = {"question", "ground_truth"}
-        for index, item in enumerate(dataset, start=1):
-            missing = required_fields - item.keys()
-            if missing:
-                raise ValueError(
-                    f"Item {index} is missing fields: {sorted(missing)}"
-                )
+def _format_contexts(contexts: Sequence[str]) -> str:
+    if not contexts:
+        raise ValueError("Contexts cannot be empty.")
 
-        return dataset
+    if any(not isinstance(context, str) for context in contexts):
+        raise ValueError("Every context must be a string.")
 
-    def judge_score(self, metric, question, answer, contexts,
-                    ground_truth=""):
-        context_text = "\n\n".join(contexts)
+    return "\n\n".join(
+        f"[{index}] {context}"
+        for index, context in enumerate(contexts, start=1)
+    )
 
-        prompts = {
-            "faithfulness": (
-                "Evaluate whether every factual claim in the answer "
-                "is supported by the retrieved contexts. "
-                "Ignore claims that are clearly marked as uncertainty."
-            ),
-            "answer_relevance": (
-                "Evaluate how directly and completely the answer "
-                "addresses the question. Do not reward irrelevant content."
-            ),
-            "context_precision": (
-                "Evaluate how relevant the retrieved contexts are "
-                "to answering the question. Give a high score when "
-                "the contexts are useful and focused, and a low score "
-                "when they are mostly irrelevant."
-            ),
-        }
 
-        prompt = f"""
-You are a strict and impartial RAG evaluation judge.
+FAITHFULNESS_PROMPT = """You are a strict evaluator of factual grounding.
 
-Metric: {metric}
-Criterion: {prompts[metric]}
+Break the ANSWER into atomic factual claims. For each claim, determine whether
+it can be inferred directly from the CONTEXT alone. Do not use outside knowledge.
+Claims not supported by the context must be marked unsupported.
 
-Question:
-{question}
+CONTEXT:
+{context}
 
-Reference answer (for guidance only):
-{ground_truth}
-
-Retrieved contexts:
-{context_text}
-
-Generated answer:
+ANSWER:
 {answer}
 
-Return only a JSON object in this exact format:
-{{"score": 0.0}}
-
-The score must be a number between 0.0 and 1.0.
-Do not include any text outside the JSON object.
+Return only a valid JSON object in this format:
+{{"claims": [{{"claim": "text", "supported": true}}]}}
 """
 
-        response = self.llm_client.generate(
-            system_prompt=(
-                "You are an impartial evaluation judge. "
-                "Return valid JSON only."
-            ),
-            user_prompt=prompt,
-            is_json_mode=True,
+
+def _parse_faithfulness(obj: dict[str, Any]) -> float:
+    claims = obj["claims"]
+
+    if not isinstance(claims, list) or not claims:
+        raise ValueError("Claims must be a non-empty list.")
+
+    supported_count = 0
+
+    for claim in claims:
+        if not isinstance(claim, dict):
+            raise ValueError("Each claim must be an object.")
+
+        supported = claim.get("supported")
+
+        if not isinstance(supported, bool):
+            raise ValueError("The supported field must be a boolean.")
+
+        supported_count += int(supported)
+
+    return supported_count / len(claims)
+
+
+def evaluate_faithfulness(
+    answer: str,
+    contexts: Sequence[str],
+    judge_fn: JudgeFn,
+    max_retries: int = 2,
+) -> float:
+    prompt = FAITHFULNESS_PROMPT.format(
+        context=_format_contexts(contexts),
+        answer=answer,
+    )
+
+    return _call_judge(
+        "faithfulness",
+        judge_fn,
+        prompt,
+        _parse_faithfulness,
+        max_retries,
+    )
+
+
+ANSWER_RELEVANCE_PROMPT = """You are an evaluator of answer relevance.
+
+Judge how directly and completely the ANSWER addresses the QUESTION.
+Ignore factual correctness. Penalize missing information, irrelevant content,
+evasion, and unnecessary padding.
+
+Scoring rubric:
+1.0 = fully and directly answers every part
+0.7 = answers the question with minor gaps
+0.4 = partially answers or is mostly tangential
+0.0 = does not answer the question
+
+QUESTION:
+{question}
+
+ANSWER:
+{answer}
+
+Return only a valid JSON object in this format:
+{{"score": 0.0}}
+"""
+
+
+def _parse_score_object(obj: dict[str, Any]) -> float:
+    return _validate_score(obj["score"])
+
+
+def evaluate_answer_relevance(
+    question: str,
+    answer: str,
+    judge_fn: JudgeFn,
+    max_retries: int = 2,
+) -> float:
+    prompt = ANSWER_RELEVANCE_PROMPT.format(
+        question=question,
+        answer=answer,
+    )
+
+    return _call_judge(
+        "answer_relevance",
+        judge_fn,
+        prompt,
+        _parse_score_object,
+        max_retries,
+    )
+
+
+CONTEXT_PRECISION_PROMPT = """You are an evaluator of retrieval quality.
+
+For each retrieved chunk, decide whether it contains information useful
+for answering the QUESTION and supporting the REFERENCE ANSWER.
+Evaluate each chunk independently. Do not reorder the chunks.
+
+QUESTION:
+{question}
+
+REFERENCE ANSWER:
+{reference}
+
+RETRIEVED CHUNKS IN RETRIEVAL ORDER:
+{context}
+
+Return only a valid JSON object with one verdict per chunk:
+{{"verdicts": [{{"chunk": 1, "relevant": true}}]}}
+"""
+
+
+def _make_precision_parser(
+    n_chunks: int,
+) -> Callable[[dict[str, Any]], float]:
+    def parse(obj: dict[str, Any]) -> float:
+        verdicts = obj["verdicts"]
+
+        if not isinstance(verdicts, list) or len(verdicts) != n_chunks:
+            raise ValueError(
+                f"Expected exactly {n_chunks} verdicts."
+            )
+
+        relevance: dict[int, bool] = {}
+
+        for verdict in verdicts:
+            if not isinstance(verdict, dict):
+                raise ValueError("Each verdict must be an object.")
+
+            chunk = verdict.get("chunk")
+            relevant = verdict.get("relevant")
+
+            if (
+                isinstance(chunk, bool)
+                or not isinstance(chunk, int)
+                or not 1 <= chunk <= n_chunks
+            ):
+                raise ValueError(f"Invalid chunk number: {chunk!r}")
+
+            if not isinstance(relevant, bool):
+                raise ValueError("The relevant field must be a boolean.")
+
+            if chunk in relevance:
+                raise ValueError(f"Duplicate chunk number: {chunk}")
+
+            relevance[chunk] = relevant
+
+        if set(relevance) != set(range(1, n_chunks + 1)):
+            raise ValueError("One or more chunk verdicts are missing.")
+
+        hits = 0
+        precision_sum = 0.0
+
+        for rank in range(1, n_chunks + 1):
+            if relevance[rank]:
+                hits += 1
+                precision_sum += hits / rank
+
+        return precision_sum / hits if hits else 0.0
+
+    return parse
+
+
+def evaluate_context_precision(
+    question: str,
+    contexts: Sequence[str],
+    reference_answer: str,
+    judge_fn: JudgeFn,
+    max_retries: int = 2,
+) -> float:
+    if not contexts:
+        raise MetricEvaluationError(
+            "context_precision",
+            "Retrieved contexts cannot be empty.",
         )
 
-        if isinstance(response, dict):
-            result = response
-        else:
-            result = json.loads(response)
+    prompt = CONTEXT_PRECISION_PROMPT.format(
+        question=question,
+        reference=reference_answer,
+        context=_format_contexts(contexts),
+    )
 
-        score = float(result["score"])
-        if not 0.0 <= score <= 1.0:
-            raise ValueError(f"Invalid score: {score}")
+    parser = _make_precision_parser(len(contexts))
 
-        return score
-
-    def run_evaluation(self):
-        dataset = self.load_dataset()
-        results = []
-
-        print(f"Loaded {len(dataset)} questions.")
-
-        for index, item in enumerate(dataset, start=1):
-            question = item["question"]
-            ground_truth = item["ground_truth"]
-            answer = item.get("answer")
-
-            contexts = item.get("retrieved_contexts")
-            if contexts is None:
-                fallback_context = item.get("context", "")
-                contexts = (
-                    [fallback_context]
-                    if isinstance(fallback_context, str)
-                    else fallback_context
-                )
-
-            if not answer:
-                print(
-                    f"Skipping item {index}: "
-                    "no generated 'answer' is available."
-                )
-                continue
-
-            if isinstance(contexts, str):
-                contexts = [contexts]
-
-            if not contexts:
-                print(
-                    f"Skipping item {index}: "
-                    "no retrieved contexts are available."
-                )
-                continue
-
-            print(f"Evaluating {index}/{len(dataset)}...")
-
-            item_result = {
-                "question": question,
-                "faithfulness": None,
-                "answer_relevance": None,
-                "context_precision": None,
-            }
-
-            for metric in (
-                "faithfulness",
-                "answer_relevance",
-                "context_precision",
-            ):
-                try:
-                    item_result[metric] = self.judge_score(
-                        metric=metric,
-                        question=question,
-                        answer=answer,
-                        contexts=contexts,
-                        ground_truth=ground_truth,
-                    )
-                except Exception as error:
-                    print(f"  {metric} failed: {error}")
-
-            results.append(item_result)
-
-        valid_results = [
-            result for result in results
-            if any(
-                result[metric] is not None
-                for metric in (
-                    "faithfulness",
-                    "answer_relevance",
-                    "context_precision",
-                )
-            )
-        ]
-
-        summary = {}
-        for metric in (
-            "faithfulness",
-            "answer_relevance",
-            "context_precision",
-        ):
-            scores = [
-                result[metric]
-                for result in valid_results
-                if result[metric] is not None
-            ]
-            summary[metric] = {
-                "mean": round(mean(scores), 4) if scores else None,
-                "count": len(scores),
-            }
-
-        output = {
-            "evaluation_method": "custom_llm_as_a_judge",
-            "dataset_path": str(self.dataset_path),
-            "total_questions": len(dataset),
-            "evaluated_questions": len(valid_results),
-            "metrics_summary": summary,
-            "results": results,
-        }
-
-        self.output_path.parent.mkdir(parents=True, exist_ok=True)
-        with self.output_path.open("w", encoding="utf-8") as file:
-            json.dump(output, file, ensure_ascii=False, indent=2)
-
-        print(f"\nResults saved to: {self.output_path}")
-        print(json.dumps(summary, ensure_ascii=False, indent=2))
-
-
-if __name__ == "__main__":
-    evaluator = RagasEvaluator()
-    evaluator.run_evaluation()
+    return _call_judge(
+        "context_precision",
+        judge_fn,
+        prompt,
+        parser,
+        max_retries,
+    )
